@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhasha — Learn the 22 Scheduled Languages of India</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Tamil:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Sans+Malayalam:wght@400;600&family=Noto+Sans+Gujarati:wght@400;600&family=Noto+Sans+Gurmukhi:wght@400;600&family=Noto+Sans+Oriya:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600&family=Noto+Sans+Meetei+Mayek&family=Noto+Sans+Ol+Chiki&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="#" data-go="explore">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="18.5" stroke="currentColor" stroke-opacity=".18"/>
+        <path d="M20 6c4 5 4 9 0 14-4-5-4-9 0-14Z" fill="currentColor" fill-opacity=".85"/>
+        <path d="M34 20c-5 4-9 4-14 0 5-4 9-4 14 0Z" fill="currentColor" fill-opacity=".55"/>
+        <path d="M20 34c-4-5-4-9 0-14 4 5 4 9 0 14Z" fill="currentColor" fill-opacity=".85"/>
+        <path d="M6 20c5-4 9-4 14 0-5 4-9 4-14 0Z" fill="currentColor" fill-opacity=".55"/>
+      </svg>
+      <div>
+        <b>Bhasha</b>
+        <span>22 scheduled languages</span>
+      </div>
+    </a>
+    <button class="hoverbtn" id="hoverBtn" aria-pressed="true" title="Hear a word when you hover over it">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M17 8.5a5 5 0 0 1 0 7"/></svg>
+      <span>Hover audio</span>
+    </button>
+    <nav role="tablist">
+      <button class="navbtn" data-go="explore" aria-selected="true">Explore</button>
+      <button class="navbtn" data-go="listen" aria-selected="false">Listen</button>
+      <button class="navbtn" data-go="practice" aria-selected="false">Practice</button>
+      <button class="navbtn" data-go="progress" aria-selected="false">Progress</button>
+      <button class="navbtn" data-go="guide" aria-selected="false">Guide</button>
+    </nav>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- ============ EXPLORE ============ -->
+  <section id="page-explore" class="page">
+    <header class="hero">
+      <div class="eyebrow">Eighth Schedule · Constitution of India</div>
+      <h1>Twenty-two languages.<br><em>One country.</em></h1>
+      <p class="lede">India's Constitution names <strong>22 languages</strong> in its Eighth Schedule, written in a dozen different scripts and drawn from four language families. Pick one, learn 89 words and phrases, and hover any word to hear it spoken aloud.</p>
+      <div class="stats">
+        <div class="stat"><b>22</b><span>languages</span></div>
+        <div class="stat"><b>4</b><span>language families</span></div>
+        <div class="stat"><b>12</b><span>scripts</span></div>
+        <div class="stat"><b>1958</b><span>phrases to learn</span></div>
+      </div>
+    </header>
+
+    <div class="controls">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Search a language, script or state…" aria-label="Search languages">
+        <button class="micbtn" id="micBtn" title="Search by voice" aria-label="Search by voice">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+        </button>
+      </div>
+      <div class="chips" id="chips"></div>
+      <select class="sortsel" id="sortSel" aria-label="Sort languages">
+        <option value="az">A–Z</option>
+        <option value="speakers">Most speakers</option>
+        <option value="family">Family</option>
+        <option value="script">Script</option>
+        <option value="progress">Most learned</option>
+      </select>
+      <div class="viewtoggle" role="group" aria-label="View">
+        <button id="vGrid" aria-pressed="true" title="Card view">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        </button>
+        <button id="vTable" aria-pressed="false" title="Table view">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="grid" class="grid"></div>
+    <div id="tableWrap" class="tablewrap" hidden>
+      <table>
+        <thead><tr><th>Language</th><th>Script</th><th>Family</th><th>Speakers</th><th>Main region</th></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <p id="empty" class="hint" hidden>Nothing matches that search. Try "Tamil", "Devanagari" or "Dravidian".</p>
+
+    <section class="pod" id="pod"></section>
+  </section>
+
+  <!-- ============ LISTEN ============ -->
+  <section id="page-listen" class="page" hidden>
+    <div style="padding:48px 0 10px">
+      <h2 class="section-title">Listen</h2>
+      <p class="section-sub" id="listenIntro">A guided audio tour. Each language says its own name, then hello. Playback uses the voices installed on your device — pick a particular voice for any language in the menu beside it, and the whole app follows your choice.</p>
+      <p class="hint" id="voiceCount" style="margin:-14px 0 18px"></p>
+    </div>
+    <div class="listenbar">
+      <button class="btn primary" id="tourPlay">Play all 22</button>
+      <button class="btn" id="tourStop">Stop</button>
+      <button class="btn" id="voiceOpen">Add a real voice</button>
+      <button class="btn" id="recOpen">Record my voice</button>
+      <button class="btn" id="vcOpen">Check voices</button>
+      <span class="voicestate" id="voiceState"></span>
+    </div>
+    <div class="listenwrap" id="listenList"></div>
+    <p class="hint">Rows are dimmed when your device has no voice for that language. Installing more system voices (or using a browser with a wider voice set) fills them in.</p>
+  </section>
+
+
+  <!-- ============ GUIDE ============ -->
+  <section id="page-guide" class="page" hidden>
+    <div style="padding:48px 0 10px">
+      <h2 class="section-title">Guide</h2>
+      <p class="section-sub">What this app is, how to use it, and exactly where its limits are.</p>
+    </div>
+    <div class="guide">
+      <div class="gcard">
+        <h3>What this is</h3>
+        <p>The Eighth Schedule of the Indian Constitution names 22 languages. This app gives each one a page: eighty-nine everyday words and phrases arranged by difficulty, the script it is written in, who speaks it and where, and a short reference section on its history and literature.</p>
+        <p style="margin-top:8px">1,958 phrases in all. It runs from a single HTML file with no account, no server and no tracking, and works with the network switched off.</p>
+      </div>
+      <div class="gcard">
+        <h3>How to learn with it</h3>
+        <ol>
+          <li><b>Explore</b> — pick a language, or search by name, script or state.</li>
+          <li>Point at a phrase to hear it, then use the tick to mark it learned.</li>
+          <li><b>Practice</b> — mixed questions across all 22, in both directions.</li>
+          <li><b>Progress</b> — see what has stuck. It is saved in this browser only.</li>
+        </ol>
+      </div>
+      <div class="gcard">
+        <h3>Hearing the words</h3>
+        <p>Audio comes from the voices installed on your device, so coverage varies. The <b>Listen</b> tab lists all 22 and lets you assign any installed voice to any language; the mic records your own take and plays it back against the device voice.</p>
+        <p style="margin-top:8px"><b>Moving a voice between devices:</b> record or generate on the machine that has the voice, press <b>Export my voice</b> in the recorder, and import that file on the other one. The audio travels in the file, not in this HTML.</p>
+        <p style="margin-top:8px">Twelve of the 22 usually have no voice on a desktop: Assamese, Bodo, Dogri, Kashmiri, Konkani, Maithili, Manipuri, Odia, Punjabi, Sanskrit, Santali and Sindhi. Each of those pages now says so and offers to record your own, or to read the script with a related voice — approximate, but enough to hear the letters.</p>
+        <p style="margin-top:8px"><b>Opened the file straight from disk?</b> The browser will not give it microphone access. Either serve the folder — <code>python3 -m http.server 8000</code>, then <code>http://localhost:8000/…</code> — or record on a phone and use <b>Import audio</b>.</p>
+        <p style="margin-top:8px">You can also record phrases yourself: <b>Record my voice</b> on the Listen tab or inside any phrasebook keeps your own takes in this browser, and they take priority over every other voice.</p>
+        <p style="margin-top:8px">Where a language has no device voice, use <b>Add a real voice</b> on the Listen tab: paste a Sarvam key and the app records the phrases and keeps the audio in this browser. <code>voice-studio.html</code> does the same job and bakes the audio into a portable file.</p>
+      </div>
+      <div class="gcard">
+        <h3>What to trust</h3>
+        <p>Speaker figures are 2011 Census counts and are now dated. The phrases were produced with a machine translation model: good for practice, not authoritative, and worth checking with a native speaker before you teach from them. Classical-language status is given with its year.</p>
+      </div>
+      <div class="gcard">
+        <h3>Keyboard</h3>
+        <ul>
+          <li><b>Esc</b> closes an open phrasebook.</li>
+          <li><b>Enter</b> or <b>Space</b> opens the focused language card.</li>
+          <li>Card names, phrases and answer options can all be heard on hover.</li>
+        </ul>
+      </div>
+      <div class="gcard">
+        <h3>The three files</h3>
+        <ul>
+          <li><code>bhasha-22-languages.html</code> — the app itself.</li>
+          <li><code>voice-studio.html</code> — browser tool that records a voice pack with your own Sarvam key.</li>
+          <li><code>make_voice_pack.py</code> — the same job as a script, for a terminal.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRACTICE ============ -->
+  <section id="page-practice" class="page" hidden>
+    <div style="padding:48px 0 10px">
+      <h2 class="section-title">Practice</h2>
+      <p class="section-sub">Questions are drawn from all 22 phrasebooks, mixing directions: from English into the language, and from the language back into English.</p>
+    </div>
+    <div class="quizcard" id="quizcard"></div>
+  </section>
+
+  <!-- ============ PROGRESS ============ -->
+  <section id="page-progress" class="page" hidden>
+    <div style="padding:48px 0 10px">
+      <h2 class="section-title">Your progress</h2>
+      <p class="section-sub">Everything is stored in this browser only. Nothing leaves your device.</p>
+    </div>
+    <div class="prog-hero" id="progHero"></div>
+    <div class="proglist" id="progList"></div>
+    <div style="margin-top:24px; display:flex; gap:10px; flex-wrap:wrap">
+      <button class="btn" id="resetBtn">Reset all progress</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>Speaker figures are approximate 2011 Census of India counts for each language as returned in that census. The phrases were produced with a machine translation model and are meant for practice, not for use as an authoritative source — a native speaker should check any phrase before you rely on it. Spoken playback uses the voices installed on your device, so not every language will have one.</p>
+  </footer>
+</main>
+
+<div id="detail" class="overlay" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-label="Language detail">
+    <div class="panel-head">
+      <span class="crumb">Phrasebook</span>
+      <button class="iconbtn" id="closeDetail" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="panel-body" id="detailBody"></div>
+  </div>
+</div>
+
+<div class="vmodal" id="voiceModal" hidden>
+  <div class="vcard" role="dialog" aria-modal="true" aria-label="Add a real voice">
+    <h3>Add a real voice</h3>
+    <p class="vhint">Records audio for the phrases with Sarvam's Bulbul and keeps it in this browser, so this file speaks properly even with no system voices. Your key goes only to api.sarvam.ai.</p>
+    <label class="vfield"><span>API key</span>
+      <input type="password" id="vKey" placeholder="sk_..." autocomplete="off" spellcheck="false">
+    </label>
+    <label class="vfield"><span>Speaker</span>
+      <select id="vSpeaker"></select>
+    </label>
+    <span style="display:block; font-family:var(--mono); font-size:.58rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-dim); margin-bottom:4px">Languages</span>
+    <div class="vlangs" id="vLangs"></div>
+    <div class="vbar"><i id="vBar"></i></div>
+    <div class="vmeta"><span id="vProg">ready</span><span id="vSize"></span></div>
+    <div class="vlog" id="vLog"></div>
+    <div class="vactions">
+      <button class="btn primary" id="vRun">Generate</button>
+      <button class="btn" id="vStop" disabled>Stop</button>
+      <button class="btn" id="vClear">Clear stored voice</button>
+      <button class="btn" id="vClose">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="vmodal" id="vcModal" hidden>
+  <div class="vcard" role="dialog" aria-modal="true" aria-label="Voices on this device">
+    <h3>Voices on this device</h3>
+    <div id="vcBody"></div>
+    <div class="vactions">
+      <button class="btn" id="vcReload">Reload voices</button>
+      <button class="btn" id="vcClose">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="vmodal" id="recModal" hidden>
+  <div class="vcard" role="dialog" aria-modal="true" aria-label="Record my voice">
+    <h3>Record my voice</h3>
+    <p class="vhint">Say each phrase in your own voice. Recordings are kept in this browser and play instead of the device voice or any voice pack. If the microphone is blocked, use <b>Record with phone app</b> — your device's recorder opens, and the file comes straight back here. To move everything to another machine, <b>Export my voice</b> here and <b>Import voice file</b> there.</p>
+    <label class="vfield"><span>Language</span><select id="recLang"></select></label>
+    <label class="vfield" id="recDevWrap" style="display:none"><span>Microphone</span><select id="recDevice"></select></label>
+    <div class="recbox">
+      <div class="recnum" id="recNum">1 / 50</div>
+      <div class="recphrase" id="recPhrase">—</div>
+      <div class="recen" id="recEn"></div>
+    </div>
+    <div class="vactions">
+      <button class="btn primary" id="recBtn">Record</button>
+      <button class="btn" id="recPlay" disabled>Play mine</button>
+      <button class="btn" id="recPhone">Record with phone app</button>
+      <button class="btn" id="recImport">Import audio</button>
+      <button class="btn" id="recTest">Test microphone</button>
+      <button class="btn" id="recPrev">Back</button>
+      <button class="btn" id="recNext">Next</button>
+    </div>
+    <input type="file" id="recFile" accept="audio/*" hidden>
+    <input type="file" id="recCapture" accept="audio/*" capture="microphone" hidden>
+    <div class="rechelp" id="recHelp" hidden></div>
+    <div class="vmeta" style="margin-top:12px"><span id="recState"></span></div>
+    <div class="vactions">
+      <button class="btn" id="recExport">Export my voice</button>
+      <button class="btn" id="recImportPack">Import voice file</button>
+      <button class="btn" id="recClear">Clear this language</button>
+      <button class="btn" id="recClose">Close</button>
+    </div>
+    <input type="file" id="recPackFile" accept=".json,application/json" hidden>
+  </div>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
