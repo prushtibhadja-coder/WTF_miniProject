@@ -11,7 +11,7 @@ manipulation from one data file.
 |---|---|
 | `index.html` | Structure only: header, the four page sections, the two modals, the toast. No inline CSS or JS. |
 | `style.css` | All styling: CSS custom properties for theming, Grid and Flexbox layouts, the 12 script font stacks, dark-mode media query, print of the 22 languages. |
-| `data.js` | The data: `LANGS` (22 languages Ã— 89 phrases), `PHRASES` (the word list with topic and level), `CATS` (topic sections), `LEVELS` (difficulty tiers), `LANG_DETAILS` (reference text per language). Exposed as `window.BHASHA_DATA`. |
+| `data.js` | The data: `LANGS` (22 languages — 89 phrases), `PHRASES` (the word list with topic and level), `CATS` (topic sections), `LEVELS` (difficulty tiers), `LANG_DETAILS` (reference text per language). Exposed as `window.BHASHA_DATA`. |
 | `script.js` | All behaviour â€” rendering, routing, quiz engine, speech, recording, storage. |
 
 Open `index.html` in any modern browser. Fonts come from Google Fonts (the only
